@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-silk',
-    version='0.5.6-thm1',
+    version='0.5.6-thm2',
     packages=['silk'],
     include_package_data=True,
     license='MIT License',
@@ -37,7 +37,6 @@ setup(
         'requests',
         'sqlparse',
         'Jinja2',
-        'autopep8',
         'pytz'
     ]
 )
