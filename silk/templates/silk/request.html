@@ -183,14 +183,6 @@
                 </div>
                 <pre id="pre-curl"><code>{{ curl.strip }}</code></pre>
             {% endif %}
-            {% if client %}
-                {% heading 'Django Test Client' %}
-                <div class="description">
-                    The following is working python code that makes use of the Django test client. It can be used to
-                    replicate this request from within a Django unit test, or simply as standalone Python.
-                </div>
-                <pre id="pre-curl"><code>{{ client.strip }}</code></pre>
-            {% endif %}
         </div>
     </div>
 {% endblock %}
