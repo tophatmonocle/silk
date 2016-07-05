@@ -440,6 +440,23 @@ A management command will wipe out all logged data:
 
     python manage.py silk_clear_request_log
 
+You can also clean up data beyond a certain time horizon:
+
+.. code:: bash
+
+    python manage.py silk_clear_request_log --older-than 1 --time-unit weeks
+
+The horizon cleanup can also be accessed programmatically, for example for
+integration with celerybeat:
+
+.. code:: python
+
+    from datetime import timedelta
+
+    from silk.cleanup import cleanup_expired_requests
+
+    cleanup_expired_requests(timedelta(days=7))
+
 .. |Gitter| image:: https://badges.gitter.im/Join%20Chat.svg
    :target: https://gitter.im/django-silk/silk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 .. |Build Status| image:: https://travis-ci.org/django-silk/silk.svg?branch=master
