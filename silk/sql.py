@@ -34,7 +34,7 @@ def execute_sql(self, *args, **kwargs):
         else:
             return
     tb = ''.join(reversed(traceback.format_stack()))
-    sql_query = q % params
+    sql_query = unicode(q) % params
     if _should_wrap(sql_query):
         query_dict = {
             'query': sql_query,
